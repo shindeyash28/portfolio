@@ -10,7 +10,7 @@ const promptSymbol = "~";
 // Handle commands
 const handleCommand = (command) => {
   if (command === "help") {
-    displayOutput("Available commands: about, education, experience, certifications, projects, technical-activities, skills, clear");
+    displayOutput("Available commands: about, education, experience, certifications, projects, technical-activities, skills, clear, resume(to download the resume)");
   } else if (command === "about") {
     displayOutput(`
     Name: Yash Suhas Shinde<br>
@@ -68,7 +68,7 @@ const handleCommand = (command) => {
     `);
   } else if (command === "clear") {
     output.innerHTML = "";
-  } else if (command === "download-resume") {
+  } else if (command === "resume") {
     displayOutput("Downloading resume...");
 
     // Create a hidden anchor element to trigger the download
