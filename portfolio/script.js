@@ -73,8 +73,8 @@ const handleCommand = (command) => {
 
     // Create a hidden anchor element to trigger the download
     const link = document.createElement("a");
-    link.href = "assets/Yash_Suhas_Shinde_0xF.pdf"; // Path to your resume
-    link.download = "Yash_Suhas_Shinde_0xF.pdf";   // The name of the downloaded file
+    link.href = "assets/resume.pdf"; // Path to your resume
+    link.download = "Yash_Shinde.pdf";   // The name of the downloaded file
     document.body.appendChild(link);
     link.click(); // Trigger the download
     document.body.removeChild(link); // Clean up the DOM
