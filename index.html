@@ -1,23 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yash's Terminal Portfolio</title>
-  <link rel="stylesheet" href="portfolio/style.css">
-  <link rel="icon" href="assets/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Portfolio Style</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    select, button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+    }
+    select {
+      background-color: #1e293b;
+      color: #f8fafc;
+    }
+    button {
+      background-color: #0ea5e9;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0284c7;
+    }
+  </style>
 </head>
 <body>
-    <div id="matrix-background"></div> <!-- New Matrix background layer -->
-  <div id="terminal">
-    <div id="header">Welcome to Yash's Portfolio</div>
-    <div id="output">
-      <!-- Dynamic content will be displayed here -->
-    </div>
-    <div id="input">
-      <span>&gt; </span><input type="text" placeholder="Type 'help' to see a list of available commands." id="command-input" autofocus>
-    </div>
+  <h1>Choose Your Portfolio Experience</h1>
+  <select id="mode-select">
+    <option value="portfolio\index.html">Terminal (No-GUI)</option>
+    <option value="gui-portfolio\index.html">GUI (Map-Based Exploration)</option>
+  </select>
+  <div>
+    <button onclick="goToSelected()">Enter</button>
+    <button onclick="goRandom()">Randomize</button>
   </div>
-  <script src="portfolio/script.js"></script>
+
+  <script>
+    function goToSelected() {
+      const selection = document.getElementById('mode-select').value;
+      window.location.href = selection;
+    }
+
+    function goRandom() {
+      const options = ['portfolio/index.html', 'gui-portfolio/index.html'];
+      const random = options[Math.floor(Math.random() * options.length)];
+      window.location.href = random;
+    }
+  </script>
 </body>
 </html>
